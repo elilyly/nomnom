@@ -1,0 +1,4 @@
+- Figure out PaperClip
+- Create Models, migrate tables
+- Create Controllers, make actions
+- Set up routes, CORS 
