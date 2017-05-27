@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :memes
+  namespace :api do
+    namespace :v1 do
+      resources :memes
+    end
+  end
 end

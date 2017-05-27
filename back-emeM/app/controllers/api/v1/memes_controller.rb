@@ -1,6 +1,7 @@
-class MemesController < ApplicationController
+class Api::V1::MemesController < ApplicationController
   def index
     @memes = Meme.all
+    render json: @memes
   end
 
   def new
@@ -25,7 +26,7 @@ class MemesController < ApplicationController
   end
 
   private
-  
+
   def memes_params
     params.require(:meme).permit(:text_top, :text_bottom, :image_url)
   end
