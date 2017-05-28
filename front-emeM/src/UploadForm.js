@@ -43,7 +43,10 @@ class UploadForm extends Component {
     return(
       <div className="ui page grid main">
         <div  className="row">
-          <Dropzone multiple={false} accept="image/*" onDrop={this.onImageDrop.bind(this)}>
+          <Dropzone
+            multiple={false}
+            accept="image/*"
+            onDrop={this.onImageDrop.bind(this)}>
             <p>Drop an image or click to select a file to upload.</p>
           </Dropzone>
         </div>
