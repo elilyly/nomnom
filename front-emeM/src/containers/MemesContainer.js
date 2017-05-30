@@ -1,6 +1,6 @@
 import React from 'react'
 
-import UploadForm from './UploadForm'
+import UploadForm from '../UploadForm'
 
 class MemesContainer extends React.Component {
   constructor(){
