@@ -5,9 +5,10 @@ class DisplayUploadedPic extends Component {
     super()
   }
 
+  
   render(){
     return(
-      <div>
+      <div className="row">
         <h1>display pic here</h1>
       </div>
     )
