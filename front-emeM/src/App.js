@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar'
-import UploadForm from './UploadForm'
+import MemesContainer from './containers/MemesContainer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 
@@ -9,9 +9,10 @@ class App extends Component {
     return (
       <div className="ui grid container">
         <NavBar />
-        <UploadForm />
+        <MemesContainer />
         <Switch>
-          <Route path='/preview'/>
+          <Route exact path='/' />
+          <Route path='/preview/:id' />
         </Switch>
       </div>
     );
