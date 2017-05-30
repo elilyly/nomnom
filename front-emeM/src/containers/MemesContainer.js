@@ -19,8 +19,9 @@ class MemesContainer extends React.Component {
       text_bottom: meme.text_bottom
     })
     .then(res => {
-      this.setState( prevState => ({ memes: [...prevState.memes, meme] }) )
+      this.setState( prevState => ({ memes: [...prevState.memes, meme] }))
     })
+    // this.props.history.push('/preview')
   }
 
   render(){

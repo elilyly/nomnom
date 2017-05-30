@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Dropzone from 'react-dropzone'
 import request from 'superagent'
 import Preview from './Preview'
@@ -81,7 +81,7 @@ class UploadForm extends Component {
             <input type="text" onChange={this.handleInputChangeTop.bind(this)}/><br/>
             <label>Add bottom text</label>
             <input type="text" onChange={this.handleInputChangeBottom.bind(this)}/><br/>
-            <input type="submit" value="Preview Meme" />
+            <Link to='/preview'><input type="submit" value="Preview Meme" /></Link>
           </form>
           <Preview
             uploadedFileCloudinaryUrl={this.state.uploadedFileCloudinaryUrl}
