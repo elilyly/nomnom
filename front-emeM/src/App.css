@@ -22,3 +22,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#text_top {
+  z-index: 100;
+  position: absolute;
+  left: 110px;
+  top: 10px;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+}
+
+.meme-container {
+  position: relative;
+}
