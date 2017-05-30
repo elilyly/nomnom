@@ -55,12 +55,22 @@ class UploadForm extends Component {
     })
   }
 
+  handleSubmit(e){
+    e.preventDefault()
+    const meme={
+      image_url: this.state.uploadedFileCloudinaryUrl,
+      text_top: this.state.text_top,
+      text_bottom: this.state.text_bottom
+    }
+    this.props.onSubmit(meme)
+  }
+
   render() {
     console.log('this is the state', this.state)
     return(
       <div className="ui page grid main">
         <div className="row">
-          <form>
+          <form onSubmit={this.handleSubmit.bind(this)}>
             <Dropzone
               multiple={false}
               accept="image/*"

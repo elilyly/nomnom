@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar'
+import MemesContainer from './containers/MemesContainer'
 import UploadForm from './UploadForm'
 import DisplayUploadedPic from './DisplayUploadedPic'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -10,7 +11,8 @@ class App extends Component {
     return (
       <div className="ui grid container">
         <NavBar />
-        <UploadForm />
+        {/* <UploadForm /> */}
+        <MemesContainer />
         <DisplayUploadedPic />
         <Switch>
           <Route path='/preview'/>
