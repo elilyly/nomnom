@@ -66,6 +66,7 @@ class UploadForm extends Component {
   }
 
   render() {
+    let showImage = <img src={this.state.uploadedFileCloudinaryUrl} />
     // console.log('this is the state', this.state)
     return(
       <div className="ui page grid main">
@@ -81,13 +82,13 @@ class UploadForm extends Component {
             <input type="text" onChange={this.handleInputChangeTop.bind(this)}/><br/>
             <label>Add bottom text</label>
             <input type="text" onChange={this.handleInputChangeBottom.bind(this)}/><br/>
-            <Link to='/preview'><input type="submit" value="Preview Meme" /></Link>
+            {/* <Link to='/preview'><input type="submit" value="Preview Meme" /></Link> */}
+            <input type="submit" value="Preview Meme" />
+
           </form>
-          <Preview
-            uploadedFileCloudinaryUrl={this.state.uploadedFileCloudinaryUrl}
-            text_top={this.state.text_top}
-            text_bottom={this.state.text_bottom}
-          />
+          <div>
+            { this.state.uploadedFileCloudinaryUrl === '' ? null : showImage }
+          </div>
         </div>
       </div>
     )

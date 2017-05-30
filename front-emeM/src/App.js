@@ -12,7 +12,6 @@ class App extends Component {
         <MemesContainer />
         <Switch>
           <Route exact path='/' />
-          <Route path='/preview' />
         </Switch>
       </div>
     );

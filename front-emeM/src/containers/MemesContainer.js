@@ -1,6 +1,7 @@
 import React from 'react'
 import UploadForm from '../UploadForm'
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Preview from '../Preview'
+import { Route, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -8,7 +9,8 @@ class MemesContainer extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      memes: []
+      memes: [],
+      redirect: false
     }
   }
 
@@ -19,18 +21,30 @@ class MemesContainer extends React.Component {
       text_bottom: meme.text_bottom
     })
     .then(res => {
-      this.setState( prevState => ({ memes: [...prevState.memes, meme] }))
+      this.setState( prevState => ({
+        memes: [...prevState.memes, meme],
+        redirect: true
+      }))
     })
     // this.props.history.push('/preview')
   }
 
-  render(){
-    console.log("MemesContainer state", this.state)
-    return(
-      <UploadForm onSubmit={this.handleAddMeme.bind(this)} />
-    )
-  }
 
+  render(){
+    // console.log("MemesContainer state", this.state)
+    // const redirect = this.state.redirect
+    let redirectToPreview = this.state.redirect ? <Redirect to ='/preview' /> : null
+    return(
+      <div>
+        <UploadForm onSubmit={this.handleAddMeme.bind(this)} />
+        <Route
+          path='/preview'
+          render={ () => <Preview memes={this.state.memes.slice(-1)[0]} /> }
+        />
+        {redirectToPreview}
+      </div>
+    ) //return
+  }
 }
 
 export default MemesContainer
