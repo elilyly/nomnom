@@ -22,3 +22,16 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#text_top {
+  z-index:100;
+  position: absolute;
+  color:black;
+  left:150px;
+  top:350px;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Dropzone from 'react-dropzone'
 import request from 'superagent'
+import Preview from './Preview'
 
 const CLOUDINARY_UPLOAD_PRESET = 'dmtif1gy';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/hellosylvee/image/upload'
@@ -10,7 +12,9 @@ class UploadForm extends Component {
     super(props)
 
     this.state = {
-      uploadedFileCloudinaryUrl: ''
+      uploadedFileCloudinaryUrl: '',
+      text_top: '',
+      text_bottom: ''
     }
   }
 
@@ -39,16 +43,41 @@ class UploadForm extends Component {
     })
   }
 
+  handleInputChangeTop(e){
+    this.setState({
+      text_top: e.target.value
+    })
+  }
+
+  handleInputChangeBottom(e){
+    this.setState({
+      text_bottom: e.target.value
+    })
+  }
+
   render() {
+    console.log('this is the state', this.state)
     return(
       <div className="ui page grid main">
-        <div  className="row">
-          <Dropzone
-            multiple={false}
-            accept="image/*"
-            onDrop={this.onImageDrop.bind(this)}>
-            <p>Drop an image or click to select a file to upload.</p>
-          </Dropzone>
+        <div className="row">
+          <form>
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={this.onImageDrop.bind(this)}>
+              <p>Drop an image or click to select a file to upload.</p>
+            </Dropzone>
+            <label>Add top text</label>
+            <input type="text" onChange={this.handleInputChangeTop.bind(this)}/><br/>
+            <label>Add bottom text</label>
+            <input type="text" onChange={this.handleInputChangeBottom.bind(this)}/><br/>
+            <input type="submit" value="Preview Meme" />
+          </form>
+          <Preview
+            uploadedFileCloudinaryUrl={this.state.uploadedFileCloudinaryUrl}
+            text_top={this.state.text_top}
+            text_bottom={this.state.text_bottom}
+         />
         </div>
       </div>
     )
