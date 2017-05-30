@@ -3,9 +3,9 @@ import React from 'react'
 
 const Preview = (props) => {
   return (
-    <div>
+    <div className='meme-container'>
       <img className='image' src={props.uploadedFileCloudinaryUrl} />
-      <p id='text_top'> {props.text_top}</p>
+      <div id='text_top'> {props.text_top}</div>
     </div>
   )
 }

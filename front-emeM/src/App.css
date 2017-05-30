@@ -24,14 +24,17 @@
 }
 
 #text_top {
-  z-index:100;
+  z-index: 100;
   position: absolute;
-  color:black;
-  left:150px;
-  top:350px;
+  left: 110px;
+  top: 10px;
 }
 
 .image {
   position: relative;
   width: 100%;
+}
+
+.meme-container {
+  position: relative;
 }
