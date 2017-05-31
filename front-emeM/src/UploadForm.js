@@ -67,6 +67,9 @@ class UploadForm extends Component {
 
   render() {
     let showImage = <img src={this.state.uploadedFileCloudinaryUrl} />
+    let showTextTop =  <div id='text_top'> {this.state.text_top.toUpperCase()} </div>
+    let showTextBottom =  <div id='text_bottom'> {this.state.text_bottom.toUpperCase()} </div>
+
     // console.log('this is the state', this.state)
     return(
       <div className="ui page grid main">
@@ -88,6 +91,8 @@ class UploadForm extends Component {
           </form>
           <div>
             { this.state.uploadedFileCloudinaryUrl === '' ? null : showImage }
+            { this.state.text_top === '' ? null : showTextTop }
+            { this.state.text_top === '' ? null : showTextBottom }
           </div>
         </div>
       </div>
