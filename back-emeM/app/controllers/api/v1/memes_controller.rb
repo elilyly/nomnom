@@ -22,7 +22,7 @@ class Api::V1::MemesController < ApplicationController
 
   def update
     meme = Meme.find(params[:id])
-    meme.update(meme_params)
+    meme.update(memes_params)
     render json: meme
   end
 

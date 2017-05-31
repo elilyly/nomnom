@@ -36,12 +36,26 @@ class MemesContainer extends React.Component {
     })
   }
 
-  handleEditMeme(){
-
+  handleEditMeme(meme){
+    axios.patch(`http://localhost:3000/api/v1/memes/${meme.id}`, {
+      image_url: meme.image_url,
+      text_top: meme.text_top,
+      text_bottom: meme.text_bottom
+    })
+    .then(res => {
+      const updatedMemes = this.state.memes.map(me => {
+        if(me.id === res.data.id){
+          return res.data
+        } else {
+          return me
+        }
+      })
+      this.setState({memes: updatedMemes})
+      this.props.history.push('/memes')
+    })
   }
 
   handleDeleteMeme(id){
-    console.log("ID: ", id);
     axios.delete(`http://localhost:3000/api/v1/memes/${id}`)
     .then(res => {
       const updatedMemes = this.state.memes.filter(meme => meme.id !== id)
@@ -58,7 +72,7 @@ class MemesContainer extends React.Component {
       <div>
         <Switch>
           <Route path="/memes/:id/edit" render={({match}) => {
-            const meme = this.state.memes.find(meme => meme.id ==match.params.id)
+            const meme = this.state.memes.find(meme => meme.id == match.params.id)
             return < EditForm meme={meme} onEdit={this.handleEditMeme.bind(this)} />}}
           />
           <Route
