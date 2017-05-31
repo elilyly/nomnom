@@ -30,8 +30,6 @@ class MemesContainer extends React.Component {
 
 
   render(){
-    console.log("MemesContainer state", this.state)
-    const redirect = this.state.redirect
     let redirectToPreview = this.state.redirect ? <Redirect to ='/preview' /> : null
     return(
       <div>
@@ -42,7 +40,7 @@ class MemesContainer extends React.Component {
         />
         {redirectToPreview}
       </div>
-    ) //return
+    )
   }
 }
 
