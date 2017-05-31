@@ -48,7 +48,7 @@ class MemesContainer extends React.Component {
 
   render(){
     let redirectToPreview = this.state.redirect ? <Redirect to ='/memes/preview' /> : null
-    console.log("redirect: ", redirectToPreview)
+
     return(
       <div>
         <Switch>
