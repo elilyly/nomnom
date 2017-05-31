@@ -14,3 +14,13 @@
 - add a "preview meme" link (disguised as button) for preview image with text √
 - [frontend] render newly created meme for preview √
   - either used the url from state or response from backend API √
+
+/memes (index) √
+/memes/new (create a meme) √
+/memes/preview (preview meme) √
+/memes/edit (for now, create a new form) ? - dependent on preview TEAM
+/memes/7 showpage, include a delete button ? - dependent on preview TEAM
+REFACTOR - TEAM
+
+- Show '/preview' with meme (this also includes 2 buttons: 'edit' and 'create meme') - s-bruce
+- Show 'memes/index' with meme shown below image upload form - sylee

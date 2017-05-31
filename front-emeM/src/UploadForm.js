@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Dropzone from 'react-dropzone'
 import request from 'superagent'
-import Preview from './Preview'
+// import Preview from './Preview'
 
 const CLOUDINARY_UPLOAD_PRESET = 'dmtif1gy';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/hellosylvee/image/upload'
@@ -66,7 +66,7 @@ class UploadForm extends Component {
   }
 
   render() {
-    let showImage = <img src={this.state.uploadedFileCloudinaryUrl} />
+    let showImage = <img alt="" src={this.state.uploadedFileCloudinaryUrl} />
     // console.log('this is the state', this.state)
     return(
       <div className="ui page grid main">
@@ -82,7 +82,6 @@ class UploadForm extends Component {
             <input type="text" onChange={this.handleInputChangeTop.bind(this)}/><br/>
             <label>Add bottom text</label>
             <input type="text" onChange={this.handleInputChangeBottom.bind(this)}/><br/>
-            {/* <Link to='/preview'><input type="submit" value="Preview Meme" /></Link> */}
             <input type="submit" value="Preview Meme" />
 
           </form>

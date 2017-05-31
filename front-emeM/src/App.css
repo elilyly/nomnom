@@ -1,6 +1,8 @@
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/********** Preview Component **********/
+
+.preview-image {
+  position: relative;
+  width: 100%;
 }
 
 #text_top {
@@ -17,10 +19,38 @@
   bottom: 25px;
 }
 
-.image {
+
+/********** DisplayAllMemesInRow Component **********/
+
+.wrapper {
   position: relative;
+}
+
+.image-tile {
+  max-width: 200px;
+}
+
+.display-text-center {
+  z-index: 100;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+#display-text-top {
+  position: absolute;
+  top: 10px;
+  left: 0px;
   width: 100%;
 }
+
+#display-text-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  width: 100%;
+}
+
 
 .meme-container {
   position: relative;
