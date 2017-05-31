@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Input, Form, Button } from 'semantic-ui-react'
 
 class EditForm extends Component {
   constructor(props) {
@@ -47,18 +47,27 @@ class EditForm extends Component {
         <div className="row">
           <div className="column padding-reset">
             <Grid centered>
-              <Grid.Row container centered><br/><h1>Edit Your Meme</h1></Grid.Row>
-                <Grid.Row verticalAlign='middle' centered>
-                  <form onSubmit={this.handleSubmit.bind(this)}>
-                    <Grid centered>
-                      <label>Edit top text</label>
-                      <input type="text" value={this.state.text_top} onChange={this.handleInputChangeTop.bind(this)}/><br/>
-                      <label>Edit bottom text</label>
-                      <input type="text" value={this.state.text_bottom} onChange={this.handleInputChangeBottom.bind(this)}/><br/>
-                      <input type="submit" value="Edit and Publish Meme!" />
-                    </Grid>
-                  </form>
-                </Grid.Row>
+              <Grid.Row container centered><br/>
+                <h1>Edit Your Meme</h1>
+              </Grid.Row>
+              <Grid.Row verticalAlign='middle' centered>
+                <Grid centered>
+                <Form onSubmit={this.handleSubmit.bind(this)}><br/>
+                  <Form.Field>
+                    <label>Edit top text</label>
+                    <Input type="text" value={this.state.text_top} onChange={this.handleInputChangeTop.bind(this)}/>
+                  </Form.Field>
+                  <Form.Field>
+                    <label>Edit bottom text</label>
+                    <Input type="text" value={this.state.text_bottom} onChange={this.handleInputChangeBottom.bind(this)}/>
+                  </Form.Field>
+                  <Form.Field>
+                    <label>&nbsp;</label>
+                    <Button color='teal' type="submit">Create Meme!</Button>
+                  </Form.Field>
+                </Form>
+                </Grid>
+              </Grid.Row>
             </Grid> <br/><br/><br/><br/>
             <div>
               <Grid centered>
