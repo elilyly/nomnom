@@ -1,40 +1,9 @@
-/********** Preview Component **********/
-
-.preview-image {
-  position: relative;
-  width: 100%;
-}
-
-#text_top {
-  z-index: 100;
-  position: absolute;
-  left: 110px;
-  top: 10px;
-  font-family: Impact;
-  font-size: 50px;
-  color: white;
-}
-
-#text_bottom {
-  z-index: 100;
-  position: absolute;
-  left: 90px;
-  bottom: 25px;
-  font-family: Impact;
-  font-size: 50px;
-  color: white;
-}
-
-/********** DisplayAllMemesInRow Component **********/
+/********** Shared CSS **********/
 
 .wrapper {
   position: relative;
   display: inline-block;
   margin: 20px;
-}
-
-.image-tile {
-  max-width: 200px;
 }
 
 .display-text-center {
@@ -44,6 +13,12 @@
   font-size: 24px;
   font-family: Impact;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+/********** DisplayAllMemesInRow Component **********/
+
+.image-tile {
+  max-width: 200px;
 }
 
 #display-text-top {
@@ -60,7 +35,27 @@
   width: 100%;
 }
 
-
-.meme-container {
+/********** Preview Component **********/
+#uploadImageScale img {
   position: relative;
+  max-width: 50%;
+}
+
+#text_top {
+  z-index: 100;
+  position: absolute;
+  left: 110px;
+  top: 10px;
+}
+
+#text_bottom {
+  z-index: 100;
+  position: absolute;
+  left: 90px;
+  bottom: 25px;
+}
+
+.preview-image {
+  position: relative;
+  width: 100%;
 }

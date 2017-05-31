@@ -86,9 +86,13 @@ class UploadForm extends Component {
 
           </form>
           <div>
-            { this.state.uploadedFileCloudinaryUrl === '' ? null : showImage }
-            { this.state.text_top === '' ? null : showTextTop }
-            { this.state.text_top === '' ? null : showTextBottom }
+            <div className='wrapper'>
+              { this.state.uploadedFileCloudinaryUrl === '' ? null : showImage }
+              <div className='display-text-center'>
+                { this.state.text_top === '' ? null : showTextTop }
+                { this.state.text_top === '' ? null : showTextBottom }
+              </div>
+            </div>
           </div>
         </div>
       </div>
