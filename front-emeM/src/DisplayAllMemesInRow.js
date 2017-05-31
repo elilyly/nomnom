@@ -1,7 +1,6 @@
 import React from 'react'
 
 const DisplayAllMemesInRow = (props) => {
-  console.log('displayallmemes<3', props) //array of 30 objs
   let eachMeme = props.memes.map( (em, i) => {
     return(
       <div className="wrapper" key={i}>

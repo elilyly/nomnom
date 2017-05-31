@@ -38,7 +38,12 @@ class MemesContainer extends React.Component {
   handleDeleteMeme(id){
     console.log("ID: ", id);
     axios.delete(`http://localhost:3000/api/v1/memes/${id}`)
-    .then(res => console.log("Deleted!"))
+    .then(res => {
+      const updatedMemes = this.state.memes.filter(meme => meme.id !== id)
+      this.setState({memes: updatedMemes})
+      alert("Meme sucessfully deleted!")
+      this.props.history.push('/memes')
+    })
   }
 
   render(){
