@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import DisplayAllMemesContainer from './containers/DisplayAllMemesContainer'
 import MemesContainer from './containers/MemesContainer'
 import { Switch, Route } from 'react-router-dom'
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
   render() {
