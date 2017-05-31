@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import DisplayAllMemesInTable from '../DisplayAllMemesInTable'
 import axios from 'axios'
+import { Grid } from 'semantic-ui-react'
+
 
 class DisplayAllMemesContainer extends Component {
   constructor(){
@@ -18,9 +20,11 @@ class DisplayAllMemesContainer extends Component {
 
   render(){
     return(
-      <div>
-        <h1>Welcome to emeM</h1>
-        <DisplayAllMemesInTable memes={this.state.memes}/>
+      <div className="column padding-reset">
+        <Grid container columns={4} centered>
+          <Grid.Row container verticalAlign='middle'><br/><h1>Welcome to emeM</h1></Grid.Row>
+          <DisplayAllMemesInTable memes={this.state.memes}/>
+        </Grid>
       </div>
     )
   }
