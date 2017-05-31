@@ -10,6 +10,7 @@ class Api::V1::MemesController < ApplicationController
 
   def create
     @meme = Meme.create(memes_params)
+    render json: @meme
   end
 
   def show
