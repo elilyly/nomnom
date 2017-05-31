@@ -1,6 +1,7 @@
 import React from 'react'
 import DisplayAllMemesInTable from '../DisplayAllMemesInTable'
 import UploadForm from '../UploadForm'
+import EditForm from '../EditForm'
 import Preview from '../Preview'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import axios from 'axios'
@@ -35,6 +36,10 @@ class MemesContainer extends React.Component {
     })
   }
 
+  handleEditMeme(){
+
+  }
+
   handleDeleteMeme(id){
     console.log("ID: ", id);
     axios.delete(`http://localhost:3000/api/v1/memes/${id}`)
@@ -52,6 +57,10 @@ class MemesContainer extends React.Component {
     return(
       <div>
         <Switch>
+          <Route path="/memes/:id/edit" render={({match}) => {
+            const meme = this.state.memes.find(meme => meme.id ==match.params.id)
+            return < EditForm meme={meme} onEdit={this.handleEditMeme.bind(this)} />}}
+          />
           <Route
             exact path='/memes'
             render={() => <DisplayAllMemesInTable memes={this.state.memes}/>}
