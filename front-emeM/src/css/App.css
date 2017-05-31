@@ -24,6 +24,8 @@
 
 .wrapper {
   position: relative;
+  display: inline-block;
+  margin: 20px;
 }
 
 .image-tile {
@@ -40,14 +42,14 @@
 #display-text-top {
   position: absolute;
   top: 10px;
-  left: 0px;
+  left: -20px;
   width: 100%;
 }
 
 #display-text-bottom {
   position: absolute;
   bottom: 20px;
-  left: 0px;
+  left: -20px;
   width: 100%;
 }
 
