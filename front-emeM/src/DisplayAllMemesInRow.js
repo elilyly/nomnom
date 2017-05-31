@@ -1,7 +1,6 @@
 import React from 'react'
 
 const DisplayAllMemesInRow = (props) => {
-
   const reverseOrder = props.memes.slice(0).reverse()
   let eachMeme = reverseOrder.map( (em, i) => {
     return(

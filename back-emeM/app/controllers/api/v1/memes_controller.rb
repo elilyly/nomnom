@@ -21,9 +21,15 @@ class Api::V1::MemesController < ApplicationController
   end
 
   def update
+    meme = Meme.find(params[:id])
+    meme.update(meme_params)
+    render json: meme
   end
 
   def destroy
+    meme = Meme.find(params[:id])
+    meme.destroy
+    render json: meme
   end
 
   private
