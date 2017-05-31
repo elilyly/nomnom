@@ -1,8 +1,44 @@
-/********** Preview Component **********/
+/********** Shared CSS **********/
 
-.preview-image {
+.wrapper {
   position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+.display-text-center {
+  z-index: 100;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-family: Impact;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+/********** DisplayAllMemesInRow Component **********/
+
+.image-tile {
+  max-width: 200px;
+}
+
+#display-text-top {
+  position: absolute;
+  top: 10px;
+  left: 0px;
   width: 100%;
+}
+
+#display-text-bottom {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  width: 100%;
+}
+
+/********** Preview Component **********/
+#uploadImageScale img {
+  position: relative;
+  max-width: 50%;
 }
 
 #text_top {
@@ -19,41 +55,7 @@
   bottom: 25px;
 }
 
-/********** DisplayAllMemesInRow Component **********/
-
-.wrapper {
+.preview-image {
   position: relative;
-  display: inline-block;
-  margin: 20px;
-}
-
-.image-tile {
-  max-width: 200px;
-}
-
-.display-text-center {
-  z-index: 100;
-  text-align: center;
-  color: #FFFFFF;
-  font-size: 20px;
-  font-family: Impact;
-}
-
-#display-text-top {
-  position: absolute;
-  top: 10px;
-  left: -20px;
   width: 100%;
-}
-
-#display-text-bottom {
-  position: absolute;
-  bottom: 20px;
-  left: -20px;
-  width: 100%;
-}
-
-
-.meme-container {
-  position: relative;
 }

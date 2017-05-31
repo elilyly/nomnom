@@ -98,9 +98,13 @@ class UploadForm extends Component {
             </Grid> <br/><br/><br/><br/>
             <div>
               <Grid centered>
-              { this.state.uploadedFileCloudinaryUrl === '' ? null : showImage }
-              { this.state.text_top === '' ? null : showTextTop }
-              { this.state.text_top === '' ? null : showTextBottom }
+                <div className='wrapper'>
+                  { this.state.uploadedFileCloudinaryUrl === '' ? null : showImage }
+                <div className='display-text-center'>
+                  { this.state.text_top === '' ? null : showTextTop }
+                  { this.state.text_top === '' ? null : showTextBottom }
+                </div>
+              </div>
             </Grid>
           </div>
           </div>
