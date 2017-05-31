@@ -24,6 +24,9 @@ class Api::V1::MemesController < ApplicationController
   end
 
   def destroy
+    meme = Meme.find(params[:id])
+    meme.destroy
+    render json: meme
   end
 
   private

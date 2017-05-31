@@ -9,11 +9,14 @@ class App extends Component {
   render() {
     return (
       <div className="ui grid container">
-        <NavBar />
-        <Switch>
-          <Route exact path='/memes' component={DisplayAllMemesContainer}/>
-          <Route path='/memes/new' component={MemesContainer} />
-        </Switch>
+        <div>
+          <NavBar />
+        </div>
+        <div>
+          <Switch>
+            <Route path='/memes' component={MemesContainer}/>
+          </Switch>
+        </div>
       </div>
     );
   }
