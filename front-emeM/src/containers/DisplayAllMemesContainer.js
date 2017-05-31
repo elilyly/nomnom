@@ -18,9 +18,10 @@ class DisplayAllMemesContainer extends Component {
 
   render(){
     return(
-      <table>
+      <div>
+        <h1>Welcome to emeM</h1>
         <DisplayAllMemesInTable memes={this.state.memes}/>
-      </table>
+      </div>
     )
   }
 }
