@@ -1,8 +1,9 @@
 import React from 'react'
 
 const DisplayAllMemesInRow = (props) => {
-  console.log('displayallmemes<3', props) //array of 30 objs
-  let eachMeme = props.memes.map( (em, i) => {
+
+  const reverseOrder = props.memes.slice(0).reverse()
+  let eachMeme = reverseOrder.map( (em, i) => {
     return(
       <div className="wrapper" key={i}>
         <img className="image-tile" src={em.image_url} alt="" />
@@ -13,9 +14,8 @@ const DisplayAllMemesInRow = (props) => {
       </div>
     )
   })
-
   return(
-    <div>{eachMeme}</div>
+    <div>{ eachMeme }</div>
   )
 }
 

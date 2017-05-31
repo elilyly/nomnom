@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Preview = (props) => {
+  console.log('this is from preview', props)
   return (
     <div className='meme-container'>
       <img className='preview-image' alt="" src={props.uploadedFileCloudinaryUrl} />
