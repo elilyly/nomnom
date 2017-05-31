@@ -22,27 +22,25 @@ class MemesContainer extends React.Component {
     })
     .then(res => {
       this.setState( prevState => ({
-        memes: [...prevState.memes, meme],
+        memes: [...prevState.memes, res.data],
         redirect: true
       }))
     })
-    // this.props.history.push('/preview')
   }
 
 
   render(){
-    // console.log("MemesContainer state", this.state)
     let redirectToPreview = this.state.redirect ? <Redirect to ='/preview' /> : null
     return(
       <div>
         <UploadForm onSubmit={this.handleAddMeme.bind(this)} />
         <Route
           path='/preview'
-          render={ () => <Preview memes={this.state.memes.slice(-1)[0]} /> }
+          render={ () => <Preview meme={this.state.memes.slice(-1)[0]} /> }
         />
         {redirectToPreview}
       </div>
-    ) //return
+    )
   }
 }
 
