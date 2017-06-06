@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
 import request from 'superagent'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Input, Form, Button} from 'semantic-ui-react'
 
 
 const CLOUDINARY_UPLOAD_PRESET = 'dmtif1gy';
@@ -75,9 +75,9 @@ class UploadForm extends Component {
         <div className="row">
           <div className="column padding-reset">
             <Grid centered>
-              <Grid.Row container centered><br/><h1>Add a Meme</h1></Grid.Row>
+              <Grid.Row container centered><br/><h1>Create An emeM Meme!</h1></Grid.Row>
                 <Grid.Row verticalAlign='middle' centered>
-                  <form onSubmit={this.handleSubmit.bind(this)}>
+                  <Form onSubmit={this.handleSubmit.bind(this)}>
                     <Grid centered>
                     <Dropzone
                       multiple={false}
@@ -87,13 +87,20 @@ class UploadForm extends Component {
                     </Dropzone>
                     </Grid><br/><br/><br/>
                     <Grid centered>
-                      <label>Add top text</label>
-                      <input type="text" onChange={this.handleInputChangeTop.bind(this)}/><br/>
-                      <label>Add bottom text</label>
-                      <input type="text" onChange={this.handleInputChangeBottom.bind(this)}/><br/>
-                      <input type="submit" value="Preview Meme" />
+                      <Form.Field>
+                        <label>Add top text</label>
+                        <Input placeholder='enter top text' type="text" onChange={this.handleInputChangeTop.bind(this)}/><br/>
+                      </Form.Field>
+                      <Form.Field>
+                        <label>Add bottom text</label>
+                        <Input placeholder='enter bottom text' type="text" onChange={this.handleInputChangeBottom.bind(this)}/><br/>
+                      </Form.Field>
+                      <Form.Field>
+                        <label>&nbsp;</label>
+                        <Button color='teal' type="submit" value="Preview Meme">Preview Meme</Button>
+                      </Form.Field>
                     </Grid>
-                  </form>
+                  </Form>
                 </Grid.Row>
             </Grid> <br/><br/><br/><br/>
             <div>
