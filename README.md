@@ -2,12 +2,19 @@
 A meme generator that uses images and text to create custom memes.
 
 ## Tech Breakdown:
-⋅⋅* Built component-based front end using React
-⋅⋅* Built RESTful API using Ruby on Rails and the MVC pattern
-⋅⋅* Utilized Semantic UI React components and custom CSS to format and style front end
-⋅⋅* Used react-dropzone to accept image from user, superagent to transfer the image, and Cloudinary to store the image
+* Built component-based front end using React
+* Built RESTful API using Ruby on Rails and the MVC pattern
+* Utilized Semantic UI React components and custom CSS to format and style front end
+* Used react-dropzone to accept image from user, superagent to transfer the image, and Cloudinary to store the image
 
-![](https://media.giphy.com/media/OrdkIZnSq8hIQ/giphy.gif)
+![upload](https://media.giphy.com/media/OrdkIZnSq8hIQ/giphy.gif)
+### Upload an image through drag-and-drop or select by file
+
+![add text](https://media.giphy.com/media/5HYwWn2zd7QZO/giphy.gif)
+### Add text to top and bottom of the image uploaded
+
+![create meme](https://media.giphy.com/media/vohWmmRxioIZa/giphy.gif)
+### Create a meme in an instant!
 
 A snippet of task list for different tracks of work: 
 
