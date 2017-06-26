@@ -1,7 +1,15 @@
-- Figure out PaperClip
-- Create Models, migrate tables
-- Create Controllers, make actions
-- Set up routes, CORS
+# emeM Meme Generator
+A meme generator that uses images and text to create custom memes.
+
+## Tech Breakdown:
+⋅⋅* Built component-based front end using React
+⋅⋅* Built RESTful API using Ruby on Rails and the MVC pattern
+⋅⋅* Utilized Semantic UI React components and custom CSS to format and style front end
+⋅⋅* Used react-dropzone to accept image from user, superagent to transfer the image, and Cloudinary to store the image
+
+![](https://media.giphy.com/media/OrdkIZnSq8hIQ/giphy.gif)
+
+A snippet of task list for different tracks of work: 
 
 - uploaded image sent to cloudinary through help from superagent √
 - include text_top, text_bottom properties inside constructor as "" (for initial state) √
@@ -15,12 +23,6 @@
 - [frontend] render newly created meme for preview √
   - either used the url from state or response from backend API √
 
-/memes (index) √
-/memes/new (create a meme) √
-/memes/preview (preview meme) √
-/memes/edit (for now, create a new form) ? - dependent on preview TEAM
-/memes/7 showpage, include a delete button ? - dependent on preview TEAM
-REFACTOR - TEAM
-
-- Show '/preview' with meme (this also includes 2 buttons: 'edit' and 'create meme') - s-bruce
+- Show '/preview' with meme (this also includes 2 buttons: 'edit' and 'create meme') - s-bruce, liz
 - Show 'memes/index' with meme shown below image upload form - sylee
+
